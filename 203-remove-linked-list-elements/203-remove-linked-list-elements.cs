@@ -11,16 +11,21 @@
  */
 public class Solution {
     public ListNode RemoveElements(ListNode head, int val) {
+        
+        while(head != null){
+            if(head.val == val){
+                head = head.next;
+            }else{
+                break;
+            }
+        }
+        
         ListNode prev = null;
         ListNode curr = head;
         
         while(curr != null){
             if(curr.val == val){
-                if(prev != null){
-                    prev.next = curr.next;
-                }else{
-                    head = curr.next;
-                }
+                prev.next = curr.next;
                 curr = curr.next;
             }else{
                 prev = curr;
