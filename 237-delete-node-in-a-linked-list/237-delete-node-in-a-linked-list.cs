@@ -14,3 +14,8 @@ public class Solution {
         
     }
 }
+
+/*
+    TC = O(1)
+    SC = O(1)
+*/
