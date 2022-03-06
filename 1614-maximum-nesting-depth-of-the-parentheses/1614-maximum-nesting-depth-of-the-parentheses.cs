@@ -3,16 +3,19 @@ public class Solution {
         Stack<char> stack = new Stack<char>();
         
         int maxStackSize = 0;
+        int count = 0;
         
         foreach(char c in s){
             if(c == '('){
                 stack.Push(c);
-                if(stack.Count > maxStackSize){
-                    maxStackSize = stack.Count;
+                count++;
+                if(count > maxStackSize){
+                    maxStackSize = count;
                 }
             }else{
                 if(c == ')'){
                     stack.Pop();
+                    count--;
                 }
             }
         }
