@@ -15,7 +15,7 @@ public class Solution {
         
         // return sum;
         
-        //O(1) solution below:
+        //O(1) solution below: Expanation: https://leetcode.com/problems/add-digits/discuss/1754049/Easy-O(1)-Explanation-with-Example
         if(num == 0){
             return 0;
         }
