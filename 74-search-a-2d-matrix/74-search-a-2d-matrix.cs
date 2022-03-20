@@ -20,7 +20,7 @@ public class Solution {
         return false;
         
         /*
-            TC = O(Max(n,m))
+            TC = O(n+m)
             SC = O(1)
         */
     }
