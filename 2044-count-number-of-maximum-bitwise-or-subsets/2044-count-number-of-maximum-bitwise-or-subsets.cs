@@ -16,7 +16,7 @@ public class Solution {
         //Generate all subsets
         for(int i = 0; i<numOfSubsets; i++){
             int orOfCurrentSubset = 0;
-            for(int j = 0; j<32; j++){
+            for(int j = 0; j<n; j++){
                 if(checkBit(i, j)){ //if the jth bit in i is set, include the OR of jth no. in the subset
                     orOfCurrentSubset |= nums[j];
                 }
@@ -31,5 +31,10 @@ public class Solution {
         }
         
         return numOfSubsetsWithMaxOr;
+        
+        /*
+            TC = O(2^n * n)
+            SC = O(1)
+        */
     }
 }
