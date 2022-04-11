@@ -30,5 +30,10 @@ public class Solution {
         }
         
         return result;
+        
+        /*
+            TC = O(2^n)
+            SC = O(2^n)
+        */
     }
 }
