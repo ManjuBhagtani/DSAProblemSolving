@@ -41,7 +41,7 @@ public class Solution {
         return ans;
         
         /*
-            TC = O(logn)
+            TC = O(nlogn)
             SC = O(1)
         */
     }
