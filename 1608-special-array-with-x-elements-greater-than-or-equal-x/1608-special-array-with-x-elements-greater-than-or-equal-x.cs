@@ -14,6 +14,7 @@ public class Solution {
         //there can be maximum 100 nos. greater than or equal to x
         //so, x can lie between [0, 100]
         int n = nums.Length;
+        //Array.Sort(nums);
         int low = 0;
         int high = 100;
         
