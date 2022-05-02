@@ -1,7 +1,7 @@
 public class Solution {
     public int countGreaterThanEqualToMid(int[] nums, int n, int mid){
         int count = 0;
-        for(int i = 0; i<n; i++){
+        for(int i = 0; i<n; i++){ //O(n)
             if(nums[i] >= mid){
                 count++;
             }
@@ -17,7 +17,7 @@ public class Solution {
         int low = 0;
         int high = 100;
         
-        while(low <= high){
+        while(low <= high){ //O(log100)
             int mid = low + (high-low)/2;
             int count = countGreaterThanEqualToMid(nums, n, mid);
             if(count == mid){ //mid is the special no.
@@ -30,5 +30,10 @@ public class Solution {
         }
         
         return -1;
+        
+        /*
+            TC = O(nlog100)
+            SC = O(1)
+        */
     }
 }
