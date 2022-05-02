@@ -1,0 +1,34 @@
+public class Solution {
+    public int countGreaterThanEqualToMid(int[] nums, int n, int mid){
+        int count = 0;
+        for(int i = 0; i<n; i++){
+            if(nums[i] >= mid){
+                count++;
+            }
+        }
+        return count;
+    }
+    
+    public int SpecialArray(int[] nums) {
+        //there can be minimum 0 nos. greater than or equal to x
+        //there can be maximum 100 nos. greater than or equal to x
+        //so, x can lie between [0, 100]
+        int n = nums.Length;
+        int low = 0;
+        int high = 100;
+        
+        while(low <= high){
+            int mid = low + (high-low)/2;
+            int count = countGreaterThanEqualToMid(nums, n, mid);
+            if(count == mid){ //mid is the special no.
+                return mid;
+            }else if(count < mid){
+                high = mid-1;
+            }else{
+                low = mid+1;
+            }
+        }
+        
+        return -1;
+    }
+}
