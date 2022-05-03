@@ -61,7 +61,7 @@ public class Solution {
         return ans;
         
         /*
-            TC = O(n + nlogn) = O(nlogn)
+            TC = O(n + nlog(max(bloomDay))) = O(nlog(max(bloomDay)))
             SC = O(1)
         */
     }
