@@ -40,5 +40,10 @@ public class Solution {
             ans.Add(sum);
         }
         return ans;
+        
+        /*
+            TC = O(n)
+            SC = O(n)
+        */
     }
 }
