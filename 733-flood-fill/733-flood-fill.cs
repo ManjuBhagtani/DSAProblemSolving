@@ -50,6 +50,6 @@ public class Solution {
 }
 
 /*
-    TC = O(V+E) = O(nm)
-    SC = O(V+E) = O(nm)
+    TC = O(V+E) = O(nm + 2nm) = O(nm)
+    SC = O(V) = O(nm)
 */
