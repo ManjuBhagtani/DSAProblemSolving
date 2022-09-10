@@ -25,17 +25,9 @@ public class CustomStack {
     }
     
     public void Increment(int k, int val) {
-        int[] temp = new int[size];
-        int tempTop = -1;
-        while(top >= 0){
-            temp[++tempTop] = Pop();
-        }
-        while(k-- > 0 && tempTop >= 0){
-            Push(temp[tempTop]+val);
-            tempTop--;
-        }
-        while(tempTop >= 0){
-            Push(temp[tempTop--]);
+        int min = Math.Min(k, top+1);
+        for(int i = 0; i<min; i++){
+            stack[i] += val;
         }
     }
 }
