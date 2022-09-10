@@ -6,20 +6,12 @@ public class Solution {
         Stack<int> stack = new Stack<int>();
         
         int n2 = nums2.Length;
-        int[] NSR = new int[n2];
         
-        Dictionary<int, int> nums2PosMap = new Dictionary<int, int>();
+        Dictionary<int, int> NSR = new Dictionary<int, int>(); //stores NSR for each element in nums2
         
-        for(int i = n2-1; i>=0; i--){
-            nums2PosMap.Add(nums2[i], i);
-            
-            while(stack.Count > 0 && stack.Peek() <= nums2[i]){
-                stack.Pop();
-            }
-            if(stack.Count > 0 ){
-                NSR[i] = stack.Peek();
-            }else{
-                NSR[i] = -1;
+        for(int i = 0; i<n2; i++){
+            while(stack.Count > 0 && stack.Peek() < nums2[i]){
+                NSR.Add(stack.Pop(), nums2[i]);
             }
             stack.Push(nums2[i]);
         }
@@ -28,8 +20,11 @@ public class Solution {
         int[] ans = new int[n1];
         
         for(int i = 0; i<n1; i++){
-            int posInNums2 = nums2PosMap[nums1[i]];
-            ans[i] = NSR[posInNums2];
+            if(NSR.ContainsKey(nums1[i])){
+                ans[i] = NSR[nums1[i]];
+            }else{
+                ans[i] = -1;
+            }
         }
         
         return ans;
