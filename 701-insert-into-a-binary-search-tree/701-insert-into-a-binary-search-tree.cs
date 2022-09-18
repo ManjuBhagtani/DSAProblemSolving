@@ -12,29 +12,31 @@
  * }
  */
 public class Solution {
+    public void insert(TreeNode root, int k){
+        if(k < root.val){
+            if(root.left == null){
+                root.left = new TreeNode(k);
+                return;
+            }else{
+                insert(root.left, k);
+            }  
+        }else{
+            if(root.right == null){
+                root.right = new TreeNode(k);
+                return;
+            }else{
+                insert(root.right, k);
+            }
+        }
+    }
+    
     public TreeNode InsertIntoBST(TreeNode root, int val) {
         TreeNode newNode = new TreeNode(val);
         if(root == null){
             root = newNode;
             return root;
         }
-        TreeNode temp = root;
-        while(true){
-            if(val < temp.val){
-                if(temp.left == null){
-                    temp.left = newNode;
-                    break;
-                }
-                temp = temp.left;
-            }else{
-                if(temp.right == null){
-                    temp.right = newNode;
-                    break;
-                }
-                temp = temp.right;
-            }
-        }
-        
+        insert(root, val);
         return root;
     }
 }
