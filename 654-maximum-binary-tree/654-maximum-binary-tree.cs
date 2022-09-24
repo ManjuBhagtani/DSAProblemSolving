@@ -38,5 +38,6 @@ public class Solution {
 }
 
 /*
-    TC = O()
+    TC = O(n^2)
+    SC = O(n)
 */
